@@ -13,6 +13,7 @@
 		1BD92E6222FFD9B2002A364C /* Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BD92E6022FFD9B2002A364C /* Calculator.xcdatamodeld */; };
 		1BD92E6422FFD9B4002A364C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD92E6322FFD9B4002A364C /* Assets.xcassets */; };
 		1BD92E6722FFD9B4002A364C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD92E6522FFD9B4002A364C /* LaunchScreen.storyboard */; };
+		1BD92E6F23000ADD002A364C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD92E6E23000ADD002A364C /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1BD92E6322FFD9B4002A364C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BD92E6622FFD9B4002A364C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BD92E6822FFD9B4002A364C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BD92E6E23000ADD002A364C /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1BD92E6522FFD9B4002A364C /* LaunchScreen.storyboard */,
 				1BD92E6822FFD9B4002A364C /* Info.plist */,
 				1BD92E6022FFD9B2002A364C /* Calculator.xcdatamodeld */,
+				1BD92E6E23000ADD002A364C /* Calculator.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BD92E5C22FFD9B2002A364C /* ViewController.swift in Sources */,
+				1BD92E6F23000ADD002A364C /* Calculator.swift in Sources */,
 				1BD92E5A22FFD9B2002A364C /* AppDelegate.swift in Sources */,
 				1BD92E6222FFD9B2002A364C /* Calculator.xcdatamodeld in Sources */,
 			);
