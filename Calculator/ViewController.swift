@@ -47,11 +47,5 @@ class ViewController: UIViewController {
     @IBAction func binaryOperandPressed(_ sender: UIButton) {
          currentInput = calculator.calculate(nextoperand: currentInput, tag: sender.tag)
     }
-
-    @IBAction func equalitySignPressed(_ sender: UIButton) {
-        if calculator.stillTyping{
-            currentInput = calculator.calculate(nextoperand: currentInput, tag: sender.tag)
-        }
-    }
 }
 
