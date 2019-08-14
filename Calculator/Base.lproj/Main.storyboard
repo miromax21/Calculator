@@ -40,7 +40,7 @@
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="+/-"/>
                                         <connections>
-                                            <action selector="unaryOperandPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6L1-9E-Thn"/>
+                                            <action selector="binaryOperandPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yZX-BW-Uh0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvR-Rp-SFt">
@@ -160,7 +160,7 @@
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="√"/>
                                         <connections>
-                                            <action selector="unaryOperandPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PWk-hL-AsT"/>
+                                            <action selector="binaryOperandPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xRb-Qv-Zqw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHb-Bl-itg">
@@ -184,7 +184,7 @@
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="="/>
                                         <connections>
-                                            <action selector="equalitySignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yyN-8M-YmI"/>
+                                            <action selector="binaryOperandPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rzu-ES-vKK"/>
                                         </connections>
                                     </button>
                                 </subviews>

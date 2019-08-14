@@ -45,29 +45,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func binaryOperandPressed(_ sender: UIButton) {
-        
-//        if OperationEnum(rawValue: sender.tag)! == OperationEnum.percent{
-//            currentInput = calculator.calculate(secondOperand: currentInput, tag: sender.tag)
-//        }
-        
-        if !calculator.stillTyping && calculator.operation == OperationEnum(rawValue: sender.tag)!{
-            return
-        }
-        if calculator.operation != .none{
-            currentInput = calculator.calculate(secondOperand: currentInput, tag: sender.tag)
-        }
-        calculator.setFirstOperand(tag: sender.tag, value: currentInput)
+         currentInput = calculator.calculate(nextoperand: currentInput, tag: sender.tag)
     }
-    
-    @IBAction func unaryOperandPressed(_ sender: UIButton) {
-        calculator.operation = OperationEnum(rawValue: sender.tag)!
-        currentInput = calculator.calculate(secondOperand: currentInput, tag: sender.tag)
-    }
-    
-    
+
     @IBAction func equalitySignPressed(_ sender: UIButton) {
         if calculator.stillTyping{
-            currentInput = calculator.calculate(secondOperand: currentInput, tag: sender.tag)
+            currentInput = calculator.calculate(nextoperand: currentInput, tag: sender.tag)
         }
     }
 }

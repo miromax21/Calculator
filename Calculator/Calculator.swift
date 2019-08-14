@@ -20,10 +20,10 @@ enum OperationEnum:Int{
     sqrt
 }
 enum UnaryOperationEnum:Int{
-   case percent = 2
+   case plusMinus = 1
+   case sqrt = 7
 }
 class Calculator {
-  //  var rval :Double = 0.0
     var firstOperand:Double = 0.0
     var secondOperand:Double = 0.0
     var operation = OperationEnum.none
@@ -33,27 +33,23 @@ class Calculator {
     func operateWithTwoOperands(operation: (Double, Double) -> Double) -> Double{
         return operation(firstOperand,secondOperand)
     }
+    
+    func calculate(nextoperand:Double = 0.0,tag:Int) -> Double{
 
-    
-    func setFirstOperand(tag:Int,value:Double){
-        self.firstOperand = value
-        operation = OperationEnum(rawValue: tag)!
-        stillTyping = false
-    }
-    
-    func calculate(secondOperand:Double = 0.0,tag:Int) -> Double{
-        var rval = 0.0
-        if UnaryOperationEnum(rawValue: tag) == UnaryOperationEnum.percent{
-            self.secondOperand = firstOperand/100 * secondOperand
-            rval = calculateValue(secondOperand: self.secondOperand)
+        if UnaryOperationEnum(rawValue: tag) != nil{
+            operation = OperationEnum(rawValue: tag)!
         }
-        else{
-            rval = calculateValue(secondOperand: secondOperand)
+        else if operation == .none || !stillTyping{
+            firstOperand = nextoperand
+            operation = OperationEnum(rawValue: tag)!
+            stillTyping = false
+            return nextoperand
         }
-        previouseOperation = operation
+        let rval = calculateValue(secondOperand: nextoperand)
         operation = .none
         stillTyping = false
         return rval
+        
     }
     
     private func calculateValue(secondOperand:Double) -> Double{
