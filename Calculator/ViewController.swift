@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var firstOperand: Double = 0
     var secondOperand: Double = 0
     var operationSign: OperationEnum = OperationEnum.none
-    var calculator = Calculator()
+    var calculator:CalculatorServiceProtocol = Calculator()
     var currentInput: Double {
         get{
             return Double(displayResultLable.text!)!
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func binaryOperandPressed(_ sender: UIButton) {
-         currentInput = calculator.calculate(nextoperand: currentInput, tag: sender.tag)
+         currentInput = calculator.calculate(nextoperand: currentInput, operationNumber: sender.tag)
     }
 }
 

@@ -39,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B97CEC923051E6C003F6FAB /* calculator */ = {
+			isa = PBXGroup;
+			children = (
+				1BD92E6E23000ADD002A364C /* Calculator.swift */,
+			);
+			path = calculator;
+			sourceTree = "<group>";
+		};
 		1BD92E4D22FFD9B2002A364C = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +66,7 @@
 		1BD92E5822FFD9B2002A364C /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				1B97CEC923051E6C003F6FAB /* calculator */,
 				1BD92E5922FFD9B2002A364C /* AppDelegate.swift */,
 				1BD92E5B22FFD9B2002A364C /* ViewController.swift */,
 				1BD92E5D22FFD9B2002A364C /* Main.storyboard */,
@@ -65,7 +74,6 @@
 				1BD92E6522FFD9B4002A364C /* LaunchScreen.storyboard */,
 				1BD92E6822FFD9B4002A364C /* Info.plist */,
 				1BD92E6022FFD9B2002A364C /* Calculator.xcdatamodeld */,
-				1BD92E6E23000ADD002A364C /* Calculator.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";

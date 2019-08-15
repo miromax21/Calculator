@@ -24,7 +24,11 @@ enum UnaryOperationEnum:Int{
    case plusMinus = 1
    case sqrt = 7
 }
-class Calculator {
+protocol CalculatorServiceProtocol{
+    func calculate(nextoperand:Double,operationNumber:Int) -> Double
+    var stillTyping:Bool { get set }
+}
+class Calculator:CalculatorServiceProtocol {
     
     var firstOperand:Double = 0.0
     var secondOperand:Double = 0.0
@@ -32,9 +36,9 @@ class Calculator {
     var previouseOperation = OperationEnum.none
     var stillTyping = false
     
-    func calculate(nextoperand:Double = 0.0,tag:Int) -> Double{
+    func calculate(nextoperand:Double = 0.0,operationNumber:Int) -> Double{
         var nextoperand = nextoperand
-        if let nextUnaryOperation = UnaryOperationEnum(rawValue: tag){
+        if let nextUnaryOperation = UnaryOperationEnum(rawValue: operationNumber){
             if nextUnaryOperation == .clear{
                 setDefaultData()
                 return 0
@@ -42,11 +46,11 @@ class Calculator {
             if previouseOperation != .none && !(UnaryOperationEnum(rawValue: previouseOperation.rawValue) != nil){
                nextoperand = calculateValue(nextOperand: nextoperand, nextOperation: previouseOperation)
             }
-            operation = OperationEnum(rawValue: tag)!
+            operation = OperationEnum(rawValue: operationNumber)!
         }
         else if !stillTyping || operation == .none{
             firstOperand = nextoperand
-            operation = OperationEnum(rawValue: tag)!
+            operation = OperationEnum(rawValue: operationNumber)!
             previouseOperation = operation
             stillTyping = false
             return nextoperand
