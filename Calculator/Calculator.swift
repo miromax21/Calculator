@@ -39,8 +39,8 @@ class Calculator {
                 setDefaultData()
                 return 0
             }
-            if previouseOperation != .none{
-               nextoperand = calculateValue(nextOperand: nextoperand, operation: previouseOperation)
+            if previouseOperation != .none && !(UnaryOperationEnum(rawValue: previouseOperation.rawValue) != nil){
+               nextoperand = calculateValue(nextOperand: nextoperand, nextOperation: previouseOperation)
             }
             operation = OperationEnum(rawValue: tag)!
         }
@@ -51,7 +51,7 @@ class Calculator {
             stillTyping = false
             return nextoperand
         }
-        let rval = calculateValue(nextOperand: nextoperand, operation: operation)
+        let rval = calculateValue(nextOperand: nextoperand, nextOperation: operation)
         previouseOperation = operation
         operation = .none
         stillTyping = false
@@ -63,10 +63,10 @@ class Calculator {
         return operation(firstOperand,secondOperand)
     }
     
-    private func calculateValue(nextOperand:Double,operation:OperationEnum) -> Double{
+    private func calculateValue(nextOperand:Double,nextOperation:OperationEnum) -> Double{
         self.secondOperand = nextOperand
         var rval:Double = 0.0
-        switch operation {
+        switch nextOperation {
         case .plus:
             rval = operateWithTwoOperands{$0+$1}
         case .minus:
@@ -78,7 +78,7 @@ class Calculator {
         case .plusMinus:
            rval =  operateWithTwoOperands{0 - $1}
         case .sqrt:
-           rval =  operateWithTwoOperands{0 + sqrt($1)}
+            rval = (secondOperand > 0) ? operateWithTwoOperands{0 + sqrt($1)} : secondOperand
         case .percent:
            rval =  operateWithTwoOperands{$0*$1/100}
         default:
